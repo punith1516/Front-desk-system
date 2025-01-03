@@ -1,9 +1,46 @@
-# Front-desk-system
-<h1>Overview</h1>
-The Front Desk System is a simple web-based application to manage patient queues and doctor appointments at a clinic. The front desk staff will be able to:
-<br>
-• Manage patient queues by assigning queue numbers to walk-in patients.
-<br>
-• Book, reschedule, or cancel appointments for patients.
-<br>
-• Track patient progress in the queue and their appointment status with doctors.
+# Clinic Management System
+
+A full-stack Clinic Management System using **Next.js** (frontend) and **NestJS** (backend) with **TypeORM** and **MySQL**. The system includes patient queue management and appointment scheduling.
+
+---
+
+## Features
+
+- **Queue Management**: Add walk-in patients with queue numbers.
+- **Appointment Management**: Schedule and view prior appointments.
+- **Full CRUD Operations**: Manage patients, doctors, appointments, and queues.
+- **Backend**: Built using **NestJS** with TypeORM and MySQL.
+- **Frontend**: Built with **Next.js**.
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [MySQL](https://www.mysql.com/)
+- [NestJS CLI](https://docs.nestjs.com/cli/overview)
+- [Next.js](https://nextjs.org/)
+- A package manager: `npm` or `yarn`
+
+---
+
+## Setup
+
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd clinic-management
+
+install dependencies: npm install
+
+configure the mysql database connection
+
+cd frontend
+run: nom run dev
+
+cd backend
+run: npm run dev:start
+
+open the browser: http://localhost:3000
+
+
