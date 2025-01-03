@@ -1,16 +1,22 @@
 // pages/appointment-management.js
 import { useState, useEffect } from 'react';
-import { addAppointment, getAppointments } from '../lib/api';
+import { addAppointment, getAppointments } from 'lib/api';  // Using the alias
+// Define the Appointment interface
+interface Appointment {
+  name: string;
+  age: number;
+  appointmentDate: string;
+}
 
 const AppointmentManagement = () => {
   const [patientName, setPatientName] = useState('');
   const [patientAge, setPatientAge] = useState('');
   const [appointmentDate, setAppointmentDate] = useState('');
-  const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState<Appointment[]>([]);  // State with Appointment type
 
   const handleAddAppointment = async () => {
     if (!patientName || !patientAge || !appointmentDate) return;
-    const newAppointment = { name: patientName, age: parseInt(patientAge), appointmentDate };
+    const newAppointment: Appointment = { name: patientName, age: parseInt(patientAge), appointmentDate };
     const addedAppointment = await addAppointment(newAppointment);
     setAppointments((prevAppointments) => [...prevAppointments, addedAppointment]);
     setPatientName('');
